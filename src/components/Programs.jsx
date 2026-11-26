@@ -47,7 +47,7 @@ export default function Programs() {
     <section className="programs grid-paper" aria-labelledby="programmes-heading">
       <h2 id="programmes-heading">Find your <mark>kind</mark><br />of Punchline</h2>
       <div className="program-stack">
-        <img src="/assets/images/brain.webp" alt="" className="brain" />
+        <img src={import.meta.env.BASE_URL + "assets/images/brain.webp"} alt="" className="brain" />
         {programmes.map((item, index) => (
           <div className="program-layer" key={item.tab} style={{
             '--index': index,
@@ -65,7 +65,7 @@ export default function Programs() {
                   <ActionButton className="btn" action={item.action}>Know more</ActionButton>
                 )}
               </div>
-              <img className={index >= 2 ? 'program-art' : ''} src={`/assets/images/${item.image}`} alt={item.alt} />
+              <img className={index >= 2 ? 'program-art' : ''} src={`${import.meta.env.BASE_URL}assets/images/${item.image}`} alt={item.alt} />
             </article>
           </div>
         ))}
