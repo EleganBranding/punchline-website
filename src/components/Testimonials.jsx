@@ -1,0 +1,5 @@
+import React,{useState} from 'react';
+import {Link} from 'react-router-dom';
+const names=['MAX','SATHISH','RAJ','WILSON'];
+const copy='Punchline uses the craft of comedy to help people communicate, think and connect better. From workplace teams and college students to aspiring performers and live audiences, we make learning more engaging and memorable.';
+export default function Testimonials(){const [offset,setOffset]=useState(0);return <section className="testimonials"><h2>Find <mark>our</mark> testimonials</h2><div className="testimonial-wrap"><button className="carousel-arrow" onClick={()=>setOffset(i=>(i+3)%4)} aria-label="Previous testimonials">‹</button><div className="testimonial-grid" aria-live="polite">{names.map((_,i)=>{const name=names[(i+offset)%4];return <article className="quote-card" key={name}><h3><span>❞</span>{name}</h3><p>{copy}</p></article>})}</div><button className="carousel-arrow" onClick={()=>setOffset(i=>(i+1)%4)} aria-label="Next testimonials">›</button></div><Link className="btn" to="/about">Know more</Link></section>}
